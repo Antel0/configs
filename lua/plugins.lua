@@ -152,6 +152,12 @@ require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     --                             Tail
     -- use { "thgrass/tail.nvim" }
+    --                             Csv
+    -- use { 'chrisbra/csv.vim' }
+    --                             diffview 
+    use {
+        "sindrets/diffview.nvim",
+    }
 end)
 
 

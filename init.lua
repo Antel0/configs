@@ -45,4 +45,6 @@ require("config.telescope")
 require("config.harpoon")
 --                              LSP's and Completion
 require("config.lsp")
+--                              CSV
+require("config.csv")
 
