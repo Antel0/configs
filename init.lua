@@ -33,6 +33,8 @@ require("config.folds")
 require("config.ctags")
 --                       MY COMMANDS 
 require("src.my_cmds")
+--                       MY AUTOCOMMANDS 
+require("src.my_autocmds")
 ------------------------------------------------------- Nvim Plugins -------------------------------------------------------
 require("plugins")
 --                              COLORSCHEME
