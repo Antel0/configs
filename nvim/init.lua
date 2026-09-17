@@ -15,7 +15,7 @@ vim.opt.cinoptions:append("#1")         -- Allows to indent C preprocessor direc
 vim.cmd("syntax on")                    -- Enable syntax highlighting 
 vim.cmd("filetype plugin indent on")
 
-
+vim.keymap.set('n', '<C-l>', ':e!<CR>', { desc = 'Force reload buffer' })
 
 --                       WINDOWS
 require("config.windows")
@@ -47,6 +47,9 @@ require("config.telescope")
 require("config.harpoon")
 --                              LSP's and Completion
 require("config.lsp")
+
+
 --                              CSV
-require("config.csv")
+-- require("config.csv")                
+-- Slow and doesnt really work for big csvs, worst than defaul nvim
 

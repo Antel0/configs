@@ -115,11 +115,15 @@ require('packer').startup(function(use)
     }
     --                             Telescope 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.x',
+        'nvim-telescope/telescope.nvim',
         requires = { 
             {'nvim-lua/plenary.nvim'},
             -- Highly recommended: FZF native for much faster sorting
-            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                -- run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install',
+                run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release',
+            }
         },
         config = function()
         require('telescope').setup({
@@ -150,14 +154,12 @@ require('packer').startup(function(use)
     }
     --                             Colorscheme
     use { "catppuccin/nvim", as = "catppuccin" }
+    --                             Csv 
+    -- use {
+    --     'chrisbra/csv.vim',
+    -- }
     --                             Tail
     -- use { "thgrass/tail.nvim" }
-    --                             Csv
-    -- use { 'chrisbra/csv.vim' }
-    --                             diffview 
-    use {
-        "sindrets/diffview.nvim",
-    }
 end)
 
 

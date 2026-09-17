@@ -48,13 +48,11 @@ vim.api.nvim_set_keymap("t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true, si
 vim.api.nvim_set_keymap("t", "<C-j>", [[<C-\><C-n><C-w>j]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("t", "<C-k>", [[<C-\><C-n><C-w>k]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("t", "<C-l>", [[<C-\><C-n><C-w>l]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap("t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true, silent = true })
 --  Motions in Insert Mode ??  TODO: Investigate that, it's not really working
 vim.keymap.set("i", "<C-q>", "<C-w>q", { noremap = true, silent = false })        -- Close the window
 vim.keymap.set("i", "<C-j>", "<C-w>j", { noremap = true, silent = false })        -- Go to the window down
 vim.keymap.set("i", "<C-k>", "<C-w>k", { noremap = true, silent = false })        -- Go to the window above
 vim.keymap.set("i", "<C-l>", "<C-w>l", { noremap = true, silent = false })        -- Go to the window right
-vim.keymap.set("i", "<C-h>", "<C-w>h", { noremap = true, silent = false })        -- Go to the window right
 
 -- Float Window User Commands
 vim.api.nvim_create_user_command(       -- Opens a Floating Window

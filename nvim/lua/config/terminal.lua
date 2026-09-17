@@ -1,5 +1,5 @@
 --   Terminal Settings 
-vim.opt.shell = "/bin/bash"         -- default shell
+vim.opt.shell = "%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe"         -- default shell
 vim.api.nvim_create_autocmd("TermOpen", { -- Set options when entering terminal mode
   pattern = "*",
   callback = function()
