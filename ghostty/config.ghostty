@@ -1,0 +1,46 @@
+# -----------------------------------------------------------------------------
+# Ghostty Configuration Template
+# Docs: ghostty.org/docs/config
+# -----------------------------------------------------------------------------
+
+# --- [ Text & Typography ] ---
+font-family = "JetBrains Mono"
+font-size = 12
+adjust-cell-height = 15%
+
+# --- [ Theme & Colors ] ---
+# Run `ghostty +list-themes` in your terminal to see all options
+theme = Dark Modern
+cursor-style = block
+
+# --- [ Window & Interface Styling ] ---
+# window-padding-x = 10
+# window-padding-y = 10
+window-padding-balance = false
+# On Linux/Fedora, this removes the thick title bar for a borderless window
+window-decoration = false
+
+# --- [ Performance & Mechanics ] ---
+# Prevent annoying popups when closing the window with processes running
+confirm-close-surface = false
+
+# --- [ Custom Keybinds ] ---
+# Format: keybind = trigger=action
+### TABS
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+w=close_tab
+### SPLITS
+# NAVIGATION (Jump focus between active split windows)
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
+
+# CREATE SPLITS (Spawn new terminal windows instantly in a direction)
+keybind = shift+alt+h=new_split:left
+keybind = shift+alt+j=new_split:down
+keybind = shift+alt+k=new_split:up
+keybind = shift+alt+l=new_split:right
+
+# CLOSE SPLITS
+keybind = shift+alt+w=close_surface
