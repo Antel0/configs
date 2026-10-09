@@ -115,7 +115,7 @@ require('packer').startup(function(use)
     }
     --                             Telescope 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.x',
+        'nvim-telescope/telescope.nvim', tag = 'master',
         requires = { 
             {'nvim-lua/plenary.nvim'},
             -- Highly recommended: FZF native for much faster sorting
@@ -124,8 +124,10 @@ require('packer').startup(function(use)
         config = function()
         require('telescope').setup({
             defaults = {
-            -- Your defaults here
-            }
+                preview = {
+                    treesitter = false,
+                },
+            },
         })
         -- Load the fzf extension
         require('telescope').load_extension('fzf')
