@@ -31,8 +31,37 @@ vim.lsp.config('pyright', {
 
 -- Set up Golan
 vim.lsp.config('gopls', {
-    capabilities = capabilities,
+  cmd = { 'gopls' },
+  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+  root_markers = { 'go.work', 'go.mod', '.git' },
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+        nilness = true,
+        unusedwrite = true,
+        useany = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+      usePlaceholders = true,
+      completeUnimported = true,
+      hints = {
+        assignVariableTypes = true,
+        compositeLiteralFields = true,
+        compositeLiteralTypes = true,
+        constantValues = true,
+        functionTypeParameters = true,
+        parameterNames = true,
+        rangeVariableTypes = true,
+      },
+    },
+  },
 })
+
+-- Enable the server (automatically starts on matching filetypes & roots)
+vim.lsp.enable('gopls')
 -- Set up Clangd (C/C++)
 vim.lsp.config('clangd', {
     capabilities = capabilities,
@@ -96,4 +125,17 @@ cmp.setup({
     { name = 'path' },
   })
 })
+
+
+-- Set up Vlang (v-analyzer)
+vim.lsp.config('v_analyzer', {
+  cmd = { 'v-analyzer' },
+  filetypes = { 'v', 'vsh' },
+  root_markers = { 'v.mod', '.git' },
+  capabilities = capabilities,
+  settings = {},
+})
+
+-- Enable the server (automatically starts on matching filetypes & roots)
+vim.lsp.enable('v_analyzer')
 
