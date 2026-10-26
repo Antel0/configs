@@ -32,7 +32,7 @@ export EDITOR='/usr/bin/nvim'
 # NOT A SYSTEM VARIABLE (path to .config dir)
 export CONFIG="$HOME/.config"
 # NOT A SYSTEM VARIABLE (path to the configs repository)
-export CONFIGS="$HOME/Documents/configs/"
+export CONFIGS="$HOME/Documents/configs"
                                                                          # ALIASES
 # aliases
 ### ls
@@ -73,7 +73,8 @@ dir_diff() {
         echo "Usage: dir_diff <dir1|file1> <dir2|file2>" >&2
         return 1
     fi
-    git diff --no-index $1 $2 | pnvim
+    echo "GIT DIFF COMMAND: git diff --no-index $1 $2"
+    git diff --no-index $1 $2 | nvim -c 'setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile' -
 }
                                                                          # PATH
 #   golang
